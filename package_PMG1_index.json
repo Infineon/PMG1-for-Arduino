@@ -14,7 +14,7 @@
           "architecture": "PMG1",
           "version": "0.1.2",
           "category": "Contributed",
-          "url": "https://github.com/williamc1014/PMG1_Duino/releases/download/V0.1.2/PMG1_Duino_V0.1.2.zip",
+          "url": "https://github.com/Infineon/PMG1-for-Arduino/releases/download/V0.1.2/PMG1_Duino_V0.1.2.zip",
           "archiveFileName": "PMG1_Duino_V0.1.2.zip",
           "checksum": "SHA-256:925366eef068fe13ccfc1ada82bb64f250c4d57d89f4253e47baa0ea5c0edc39",
           "size": "10996250",
@@ -82,21 +82,21 @@
           "systems": [
               {
                   "host": "x86_64-mingw32",
-                  "url": "https://github.com/williamc1014/PMG1_Duino/releases/download/V0.0.1/python-3.11.6-embed-amd64-20231003a.zip",
+                  "url": "https://github.com/Infineon/PMG1-for-Arduino/releases/download/V0.1.2/python-3.11.6-embed-amd64-20231003a.zip",
                   "archiveFileName": "python-3.11.6-embed-amd64-20231003a.zip",
                   "checksum": "SHA-256:c7fb70eeae618c2b01696106ad6baaecd6f4881d4f1c429acc330b7d5b0e754b",
                   "size": "11642060"
               },
               {
                 "host": "x86_64-apple-darwin",
-                "url": "https://github.com/williamc1014/PMG1_Duino/releases/download/V0.0.1/python-3.11.6-embed-amd64-20231003a.zip",
+                "url": "https://github.com/Infineon/PMG1-for-Arduino/releases/download/V0.1.2/python-3.11.6-embed-amd64-20231003a.zip",
                 "archiveFileName": "python-3.11.6-embed-amd64-20231003a.zip",
                 "checksum": "SHA-256:c7fb70eeae618c2b01696106ad6baaecd6f4881d4f1c429acc330b7d5b0e754b",
                 "size": "11642060"
             },              
               {
                   "host": "i686-mingw32",
-                  "url": "https://github.com/williamc1014/PMG1_Duino/releases/download/V0.0.1/python-3.11.6-embed-amd64-20231003a.zip",
+                  "url": "https://github.com/Infineon/PMG1-for-Arduino/releases/download/V0.1.2/python-3.11.6-embed-amd64-20231003a.zip",
                   "archiveFileName": "python-3.11.6-embed-amd64-20231003a.zip",
                   "checksum": "SHA-256:c7fb70eeae618c2b01696106ad6baaecd6f4881d4f1c429acc330b7d5b0e754b",
                   "size": "11642060"
@@ -109,35 +109,35 @@
           "systems": [
             {
               "host": "arm-linux-gnueabihf",
-              "url": "https://github.com/williamc1014/PMG1_Duino/releases/download/V0.0.1/ifx-fwdfu-tool.zip",
+              "url": "https://github.com/Infineon/PMG1-for-Arduino/releases/download/V0.1.2/ifx-fwdfu-tool.zip",
               "archiveFileName": "ifx-fwdfu-tool.zip",
               "checksum": "SHA-256:8004f0af8a08b76c53a8a5da9f63a35515def871acab531cc369a4787a91f9be",
               "size": "5924"
             },
             {
               "host": "i686-mingw32",
-              "url": "https://github.com/williamc1014/PMG1_Duino/releases/download/V0.0.1/ifx-fwdfu-tool.zip",
+              "url": "https://github.com/Infineon/PMG1-for-Arduino/releases/download/V0.1.2/ifx-fwdfu-tool.zip",
               "archiveFileName": "ifx-fwdfu-tool.zip",
               "checksum": "SHA-256:8004f0af8a08b76c53a8a5da9f63a35515def871acab531cc369a4787a91f9be",
               "size": "5924"
             },
             {
               "host": "x86_64-apple-darwin",
-              "url": "https://github.com/williamc1014/PMG1_Duino/releases/download/V0.0.1/ifx-fwdfu-tool.zip",
+              "url": "https://github.com/Infineon/PMG1-for-Arduino/releases/download/V0.1.2/ifx-fwdfu-tool.zip",
               "archiveFileName": "ifx-fwdfu-tool.zip",
               "checksum": "SHA-256:8004f0af8a08b76c53a8a5da9f63a35515def871acab531cc369a4787a91f9be",
               "size": "5924"
             },
             {
               "host": "x86_64-pc-linux-gnu",
-              "url": "https://github.com/williamc1014/PMG1_Duino/releases/download/V0.0.1/ifx-fwdfu-tool.zip",
+              "url": "https://github.com/Infineon/PMG1-for-Arduino/releases/download/V0.1.2/ifx-fwdfu-tool.zip",
               "archiveFileName": "ifx-fwdfu-tool.zip",
               "checksum": "SHA-256:8004f0af8a08b76c53a8a5da9f63a35515def871acab531cc369a4787a91f9be",
               "size": "5924"
             },
             {
               "host": "i686-pc-linux-gnu",
-              "url": "https://github.com/williamc1014/PMG1_Duino/releases/download/V0.0.1/ifx-fwdfu-tool.zip",
+              "url": "https://github.com/Infineon/PMG1-for-Arduino/releases/download/V0.1.2/ifx-fwdfu-tool.zip",
               "archiveFileName": "ifx-fwdfu-tool.zip",
               "checksum": "SHA-256:8004f0af8a08b76c53a8a5da9f63a35515def871acab531cc369a4787a91f9be",
               "size": "5924"
