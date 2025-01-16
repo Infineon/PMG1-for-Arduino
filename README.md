@@ -70,4 +70,4 @@ To contribute enhancements, fixes and the like see *Contributors.md*. in root fo
 
 Third Party or external library maintainers see *Libraries.md*. in root folder
 
-Also see [Wiki](https://github.com/williamc1014/PMGDuino/wiki) for any additional information
+Also see [Wiki](https://github.com/Infineon/PMG1-for-Arduino/wiki) for any additional information
