@@ -1,0 +1,159 @@
+# PMG1 platform
+# ------------------------------
+# For more info:
+# https://arduino.github.io/arduino-cli/platform-specification/
+# https://github.com/williamc1014/PMGDuino/releases/download/V0.0.1/package_PMG1_index.json
+# The information about this Arduino compatible environment
+# ---------
+name=PMG1 Family V0.x
+version=0.0.1
+
+# Build related core definitions
+# ---------
+build.core.path ={runtime.platform.path}/cores
+build.variant.path ={runtime.platform.path}/variants/{build.variant}
+build.commlib.path ={runtime.platform.path}/cores/mtb_shared
+build.variant.config_path ={runtime.platform.path}/variants/{build.variant}/bsps/config/GeneratedSource
+build.flash_ld_path ={build.variant.path}/bsps/{build.flash_ld}
+build.assembly_file ={build.commlib.path}/mtb-pdl-cat2/release-v2.5.0/drivers/source/COMPONENT_CM0P/TOOLCHAIN_GCC_ARM/cy_syslib_gcc.S
+
+#build.assembly_file ={build.variant.path}/mtb_shared/mtb-pdl-cat2/release-v2.5.0/drivers/source/COMPONENT_CM0P/TOOLCHAIN_GCC_ARM/cy_syslib_gcc.S
+
+
+# Arduino boards.txt & Arduino IDE menu related definitions
+# This can be overwritten/changed in boards.txt
+# ---------
+uart.selected=
+build.menu_flags={uart.selected}
+
+# Toolchain binaries
+# ---------
+compiler.path={runtime.tools.arm-none-eabi-gcc.path}/bin/
+compiler.c.cmd=arm-none-eabi-gcc
+compiler.cpp.cmd=arm-none-eabi-g++
+compiler.ar.cmd=arm-none-eabi-ar
+compiler.size.cmd=arm-none-eabi-size
+compiler.c.elf.cmd=arm-none-eabi-gcc
+compiler.S.cmd=arm-none-eabi-gcc
+compiler.objcopy.cmd=arm-none-eabi-objcopy
+compiler.elf2hex.cmd=arm-none-eabi-objcopy
+
+# Toolchain definitions
+# ---------
+
+# Compiler definitions
+compiler.warning_flags=-w
+compiler.define=-DDUINO_PLATFORM=1
+
+# Compiler include paths for include files
+compiler.cores_inc.path="-I{build.core.path}" "-I{build.core.path}/avr" "-I{build.core.path}/src/app" "-I{build.core.path}/src/system"
+compiler.bsp_inc.path="-I{build.variant.path}" "-I{build.variant.path}/bsps" "-I{build.variant.path}/bsps/config" "-I{build.variant.path}/bsps/config/GeneratedSource"
+compiler.cmsis_inc.path="-I{build.commlib.path}/cmsis/release-v5.8.0/Core/Include" "-I{build.commlib.path}/cmsis/release-v5.8.0/Core" "-I{build.commlib.path}/cmsis/release-v5.8.0"
+compiler.rtos_inc.path="-I{build.commlib.path}/freertos/release-v10.4.305/Source/include" "-I{build.commlib.path}/freertos/release-v10.4.305/Source" "-I{build.commlib.path}/freertos/release-v10.4.305" "-I{build.commlib.path}/freertos/release-v10.4.305/Source/portable/COMPONENT_CM0P" "-I{build.commlib.path}/freertos/release-v10.4.305/Source/portable" "-I{build.commlib.path}/freertos/release-v10.4.305/Source/portable/COMPONENT_CM0P/TOOLCHAIN_GCC_ARM" "-I{build.commlib.path}/abstraction-rtos/release-v1.7.3/include" "-I{build.commlib.path}/abstraction-rtos/release-v1.7.3" "-I{build.commlib.path}/abstraction-rtos/release-v1.7.3/include/COMPONENT_FREERTOS"
+compiler.clib_inc.path="-I{build.commlib.path}/clib-support/release-v1.3.0" "-I{build.commlib.path}/clib-support/release-v1.3.0/TOOLCHAIN_GCC_ARM"
+compiler.pdl_inc.path="-I{build.commlib.path}/mtb-pdl-cat2/release-v2.5.0/devices/include" "-I{build.commlib.path}/mtb-pdl-cat2/release-v2.5.0/devices" "-I{build.commlib.path}/mtb-pdl-cat2/release-v2.5.0" "-I{build.commlib.path}/mtb-pdl-cat2/release-v2.5.0/devices/include/ip" "-I{build.commlib.path}/mtb-pdl-cat2/release-v2.5.0/drivers/include" "-I{build.commlib.path}/mtb-pdl-cat2/release-v2.5.0/drivers"
+compiler.pdstack_inc.path="-I{build.commlib.path}/pdstack/release-v3.20.0" "-I{build.commlib.path}/pdutils\release-v1.10.0"
+compiler.corelib_inc.path="-I{build.commlib.path}/core-lib/release-v1.4.0\include" "-I{build.commlib.path}/core-lib/release-v1.4.0"
+compiler.pdstack_lib.path="-L{build.commlib.path}/pdstack/release-v3.20.0/{pdlib.link.path}/TOOLCHAIN_GCC_ARM"
+compiler.pdstack_lib.file="-l{pdlib.link.lib}"
+
+#compiler.cmsis_inc.path="-I{build.variant.path}/mtb_shared/cmsis/release-v5.8.0/Core/Include" "-I{build.variant.path}/mtb_shared/cmsis/release-v5.8.0/Core" "-I{build.variant.path}/mtb_shared/cmsis/release-v5.8.0"
+#compiler.rtos_inc.path="-I{build.variant.path}/mtb_shared/freertos/release-v10.4.305/Source/include" "-I{build.variant.path}/mtb_shared/freertos/release-v10.4.305/Source" "-I{build.variant.path}/mtb_shared/freertos/release-v10.4.305" "-I{build.variant.path}/mtb_shared/freertos/release-v10.4.305/Source/portable/COMPONENT_CM0P" "-I{build.variant.path}/mtb_shared/freertos/release-v10.4.305/Source/portable" "-I{build.variant.path}/mtb_shared/freertos/release-v10.4.305/Source/portable/COMPONENT_CM0P/TOOLCHAIN_GCC_ARM" "-I{build.variant.path}/mtb_shared/abstraction-rtos/release-v1.7.3/include" "-I{build.variant.path}/mtb_shared/abstraction-rtos/release-v1.7.3" "-I{build.variant.path}/mtb_shared/abstraction-rtos/release-v1.7.3/include/COMPONENT_FREERTOS"
+#compiler.clib_inc.path="-I{build.variant.path}/mtb_shared/clib-support/release-v1.3.0" "-I{build.variant.path}/mtb_shared/clib-support/release-v1.3.0/TOOLCHAIN_GCC_ARM"
+#compiler.pdl_inc.path="-I{build.variant.path}/mtb_shared/mtb-pdl-cat2/release-v2.5.0/devices/include" "-I{build.variant.path}/mtb_shared/mtb-pdl-cat2/release-v2.5.0/devices" "-I{build.variant.path}/mtb_shared/mtb-pdl-cat2/release-v2.5.0" "-I{build.variant.path}/mtb_shared/mtb-pdl-cat2/release-v2.5.0/devices/include/ip" "-I{build.variant.path}/mtb_shared/mtb-pdl-cat2/release-v2.5.0/drivers/include" "-I{build.variant.path}/mtb_shared/mtb-pdl-cat2/release-v2.5.0/drivers"
+#compiler.pdstack_inc.path="-I{build.variant.path}/mtb_shared/pdstack/release-v3.10.0" "-I{build.variant.path}/mtb_shared/pdutils\release-v1.10.0"
+#compiler.corelib_inc.path="-I{build.variant.path}/mtb_shared/core-lib/release-v1.4.0\include" "-I{build.variant.path}/mtb_shared/core-lib/release-v1.4.0"
+#compiler.pdstack_lib.path="-L{build.variant.path}/mtb_shared/pdstack/release-v3.20.0/COMPONENT_PMG1_PD3_DRP_EPR/TOOLCHAIN_GCC_ARM"
+#compiler.pdstack_lib.file="-lpmg1_pd3_drp_epr"
+
+# USB Flags
+build.usb_flags=-DUSB_VID={build.vid} -DUSB_PID={build.pid} -DUSBCON '-DUSB_MANUFACTURER={build.usb_manufacturer}' '-DUSB_PRODUCT={build.usb_product}'
+# Default usb manufacturer will be replaced at compile time using numeric vendor ID if available or by board's specific value.
+build.usb_manufacturer="Unknown"
+
+# GCC related definitions
+#compiler.c.flags=-mcpu={build.mcu} -nostdlib -c --specs=nano.specs -Og -mthumb -ffunction-sections -fdata-sections -ffat-lto-objects -g -Wall -pipe {compiler.warning_flags}
+compiler.c.flags=-mcpu={build.mcu} -mthumb -c -g -Os {compiler.warning_flags} -std=gnu11 -ffunction-sections -fdata-sections -nostdlib --param max-inline-insns-single=500 -MMD
+#compiler.c.extra_flags=-ftime-report
+compiler.c.extra_flags=
+compiler.libraries.ldflags={compiler.pdstack_lib.path} {compiler.pdstack_lib.file}
+
+compiler.c.elf.flags=-Os -Wl,--gc-sections -save-temps
+compiler.c.elf.extra_flags=
+
+# G++ related definitions
+#compiler.cpp.flags=-mcpu={build.mcu} -nostdlib -c --specs=nano.specs -Og -mthumb -ffunction-sections -fdata-sections -ffat-lto-objects -g -Wall -pipe {compiler.warning_flags}
+compiler.cpp.flags=-mcpu={build.mcu} -mthumb -fpermissive -c -g -Os {compiler.warning_flags} -std=gnu++11 -ffunction-sections -fdata-sections -fno-threadsafe-statics -nostdlib --param max-inline-insns-single=500 -fno-rtti -fno-exceptions -MMD
+#compiler.cpp.extra_flags=-ftime-report
+compiler.cpp.extra_flags=
+
+# Assembler related definitions
+#compiler.S.flags=-mcpu={build.mcu} -nostdlib -c --specs=nano.specs -Og -mthumb -ffunction-sections -fdata-sections -ffat-lto-objects -g -Wall -pipe {compiler.warning_flags}
+#compiler.S.extra_flags=-w
+compiler.S.flags=-mcpu={build.mcu} -mthumb -c -g -x assembler-with-cpp
+compiler.S.extra_flags=-w
+
+# Archives & binaries related definitions
+compiler.ar.flags=rcs
+compiler.ar.extra_flags=
+
+compiler.elf2hex.flags=-O ihex
+compiler.elf2hex.extra_flags=
+
+# Compile patterns
+# ----------------
+
+## Compile C files
+recipe.c.o.pattern="{compiler.path}{compiler.c.cmd}" {compiler.c.flags} {compiler.c.extra_flags} {build.extra_flags} {build.menu_flags} {compiler.cores_inc.path} {compiler.bsp_inc.path} {compiler.cmsis_inc.path} {compiler.rtos_inc.path} {compiler.clib_inc.path} {compiler.pdl_inc.path} {compiler.pdstack_inc.path} {compiler.corelib_inc.path} "{source_file}" -o "{object_file}"
+
+## Compile C++ files
+recipe.cpp.o.pattern="{compiler.path}{compiler.cpp.cmd}" {compiler.cpp.flags} {compiler.cpp.extra_flags} {build.extra_flags} {build.menu_flags} {compiler.cores_inc.path} {compiler.bsp_inc.path} {compiler.cmsis_inc.path} {compiler.rtos_inc.path} {compiler.clib_inc.path} {compiler.pdl_inc.path} {compiler.pdstack_inc.path} {compiler.corelib_inc.path} "{source_file}" -o "{object_file}"
+
+## Compile S files
+recipe.S.o.pattern="{compiler.path}{compiler.S.cmd}" {compiler.S.flags} {compiler.S.extra_flags} {build.extra_flags} {build.menu_flags} {compiler.cores_inc.path} {compiler.bsp_inc.path} {compiler.cmsis_inc.path} {compiler.rtos_inc.path} {compiler.clib_inc.path} {compiler.pdl_inc.path} {compiler.pdstack_inc.path} {compiler.corelib_inc.path} "{source_file}" -o "{object_file}"
+
+# Linker patterns
+# ----------------
+
+## Combine gc-sections, archives, and objects
+recipe.c.combine.pattern="{compiler.path}{compiler.c.elf.cmd}" -mthumb --specs=nosys.specs --specs=nano.specs -mcpu={build.mcu} {compiler.c.elf.flags} "-T{build.flash_ld_path}" "-Wl,-Map,{build.path}/{build.project_name}.map" {compiler.c.elf.extra_flags} -o "{build.path}/{build.project_name}.elf" "-L{build.path}" -Wl,--cref -Wl,--check-sections -Wl,--gc-sections -Wl,--entry=Reset_Handler -Wl,--unresolved-symbols=report-all -Wl,--warn-common -Wl,--warn-section-align {object_files} "{build.path}/{archive_file}" {compiler.libraries.ldflags} -lm 
+
+## Create archives
+# ----------------
+
+# Archive_file_path is needed for backwards compatibility with IDE 1.6.5 or older, IDE 1.6.6 or newer overrides this value
+archive_file_path={build.path}/{archive_file}
+recipe.ar.pattern="{compiler.path}{compiler.ar.cmd}" {compiler.ar.flags} {compiler.ar.extra_flags} "{archive_file_path}" "{object_file}"
+
+# Create output files
+# ----------------
+
+## Create output (bin file)
+recipe.objcopy.bin.pattern="{compiler.path}{compiler.elf2hex.cmd}" {compiler.elf2hex.flags} {compiler.elf2hex.extra_flags} "{build.path}/{build.project_name}.elf" "{build.path}/{build.project_name}.hex"
+
+## Save hex
+recipe.output.tmp_file={build.project_name}.bin
+recipe.output.save_file={build.project_name}.{build.variant}.bin
+
+## Compute size
+# ----------------
+
+recipe.size.pattern="{compiler.path}{compiler.size.cmd}" -A --common "{build.path}/{build.project_name}.elf"
+recipe.size.regex=^(\.text|\.eh_frame)\s+([0-9]+).*
+# Recipe to show SRAM size used
+recipe.size.regex.data=^(?:\.data|\.VENEER_Code|\.ram_code|\.bss|\.no_init|\Stack)\s+([0-9]+).*
+
+# ARM uploader/programmers tools
+# ----------------
+tools.pmg1_dfu.python_path={runtime.tools.python3.path}
+tools.pmg1_dfu.path={runtime.tools.ifx-fwdfu-host.path}
+tools.pmg1_dfu.file=ifx-fwdfu-host.py
+tools.pmg1_dfu.erase.params =
+tools.pmg1_dfu.erase.pattern=
+tools.pmg1_dfu.upload.protocol=
+tools.pmg1_dfu.upload.params.verbose=
+tools.pmg1_dfu.upload.params.quiet=
+tools.pmg1_dfu.upload.params =-i "{build.path}/{build.project_name}.hex"
+tools.pmg1_dfu.upload.pattern="{tools.pmg1_dfu.python_path}/python.exe" "{tools.pmg1_dfu.path}/{tools.pmg1_dfu.file}" {upload.params}
+tools.pmg1_dfu.program.params =-i "{build.path}/{build.project_name}.hex"
+tools.pmg1_dfu.program.pattern="{tools.pmg1_dfu.python_path}/python.exe" "{tools.pmg1_dfu.path}/{tools.pmg1_dfu.file}" {program.params}
