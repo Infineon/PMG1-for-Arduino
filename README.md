@@ -22,6 +22,7 @@ This repository integrates [Infineon's](https://www.infineon.com/) PMG1 microcon
 
 ## Supported Microcontroller Boards
 
+* [CY7113](https://www.infineon.com/cms/en/product/evaluation-boards/cy7113/)
 * PMGDuino board
 
 ## Additional Information
